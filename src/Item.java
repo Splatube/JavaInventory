@@ -1,15 +1,15 @@
 import java.util.Arrays;
-import java.util.UUID;
 
 public class Item {
-    private final String name;
-    private final String category;
-    private int quantity;
-    private final String[] metadata;
+    final String name;
+    final String category;
+    int quantity;
+    final String[] metadata;
 
     public Item(String name, String category, int quantity, String[] metadata) {
         this.name = name;
         this.category = category;
+        this.quantity = quantity;
         this.metadata = metadata;
     }
 
