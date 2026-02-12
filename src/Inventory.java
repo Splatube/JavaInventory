@@ -13,7 +13,7 @@ public class Inventory {
         if (items.toString().contains(name)) {
             for (Map.Entry<String, Item> item : items.entrySet()) {
                 if (item.getKey().equals(id)) {
-                    item.getValue().quantity += quantity;
+                    item.getValue().addQuantity(quantity);
                 }
             }
         } else {
@@ -24,11 +24,16 @@ public class Inventory {
     public void removeItem(String id) {
         items.remove(id);
     }
-    public void removeItem(String id, int quantity) {
-        if (items.get(id).quantity > quantity) {
-            items.get(id).quantity -= quantity;
-        } else {
-            items.remove(id);
+
+    public void setItemQuantity(String id, int quantity) {
+        if (items.containsKey(id)) {
+            items.get(id).setQuantity(quantity);
+        }
+    }
+
+    public void addItemQuantity(String id, int quantity) {
+        if (items.containsKey(id)) {
+            items.get(id).addQuantity(quantity);
         }
     }
 

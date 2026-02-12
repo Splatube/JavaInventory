@@ -17,4 +17,12 @@ public class Item {
     public String toString(){
         return "Item{name='" + name + "', category='" + category + "', quantity=" + quantity + ", metadata=" + Arrays.toString(metadata) + "}";
     }
+
+    public void addQuantity(int quantity) {
+        this.quantity += quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
 }
